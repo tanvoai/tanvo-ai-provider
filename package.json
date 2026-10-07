@@ -1,0 +1,33 @@
+{
+  "name": "@tanvoai/ai-provider",
+  "version": "0.1.0",
+  "description": "Tanvo provider for the Vercel AI SDK: generateImage and generateVideo on Nano Banana, Seedream, GPT Image, Qwen, Kling, Veo, Seedance, Wan and more through tanvo.ai. The house image engine works without an API key.",
+  "keywords": ["ai-sdk", "vercel-ai-sdk", "ai-sdk-provider", "tanvo", "image-generation", "video-generation", "text-to-image", "image-to-video", "nano-banana", "seedream", "kling", "veo", "seedance"],
+  "homepage": "https://tanvo.ai/developers?utm_source=npm&utm_medium=referral",
+  "repository": { "type": "git", "url": "git+https://github.com/tanvoai/tanvo-ai-provider.git" },
+  "bugs": { "url": "https://github.com/tanvoai/tanvo-ai-provider/issues" },
+  "author": "Tanvo (https://tanvo.ai)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/provider.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@ai-sdk/provider": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "ai": "^7.0.0",
+    "typescript": "^5",
+    "zod": "^4"
+  },
+  "engines": { "node": ">=20" }
+}
